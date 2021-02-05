@@ -1,0 +1,26 @@
+<html>
+    <head></head>
+    <body>
+        <label for="HP">HP:</label>
+        <meter id="HP"
+            min="0" max="100"
+            low="33" high="66" optimum="80"
+            value="100">
+        </meter>
+        <input type="button" value="Attack" id="button">
+        <h1 id="gameover"></h1>
+
+        <script>
+            document.getElementById("button").addEventListener("click",(e)=>{
+                let HP = document.getElementById("HP")
+                HP.value -= 10;
+                if (HP.value == 0){
+                    document.getElementById("gameover").textContent = "You Died";
+                    }
+                else{
+                    document.getElementById("gameover").textContent = "Alive";
+                }
+            });
+        </script>
+    </body>
+</html>
